@@ -4,6 +4,7 @@ CreditsScene = {
     text = [[
 
 Duncan Boatright
+@jdboatright
 
 Isaac Pepin
 

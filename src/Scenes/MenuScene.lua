@@ -7,9 +7,16 @@ local function playGame()
     Gamestate.push(WorldScene)
 end
 
-local function setWindowFlag(flag)
+local function toggleWindowFlag(flag)
     local w, h, f = love.window.getMode()
-    f[flag] = not f[flag]
+
+    -- some flags are numeric, so we toggle them from 0 to 1 and back
+    if type(f[flag]) == "number" then
+        f[flag] = (f[flag] + 1) % 2
+    else
+        f[flag] = not f[flag]
+    end
+    
     love.window.setMode(w, h, f)
 end
 
@@ -75,13 +82,13 @@ MenuScene = {
             {
                 'VSYNC',
                 function()
-                    setWindowFlag('vsync')
+                    toggleWindowFlag('vsync')
                 end
             },
             {
                 'Window Border',
                 function()
-                    setWindowFlag('borderless')
+                    toggleWindowFlag('borderless')
                 end
             },
             {
@@ -154,17 +161,10 @@ MenuScene = {
         stats = {
             {
                 function()
-                    return Stats:getPlaytime()
-                end,
-                function()
-                    return Stats:print()
+                    return Stats:getPlaytime() .. Stats:print()
                 end,
                 'root'
             },
-            {
-                'Back',
-                'root'
-            }
         },
     },
     lineHeight = 36,

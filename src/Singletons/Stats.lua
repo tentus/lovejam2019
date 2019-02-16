@@ -28,7 +28,7 @@ end
 function Stats:print()
     local str = ''
     for k, v in pairs(self.events) do
-        str = str .. k .. '  :  ' .. math.floor(v) .. '\n\n'
+        str = str .. '\n\n' .. k .. '  :  ' .. math.floor(v)
     end
     return str
 end
