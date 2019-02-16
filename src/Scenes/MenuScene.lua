@@ -161,17 +161,10 @@ MenuScene = {
         stats = {
             {
                 function()
-                    return Stats:getPlaytime()
-                end,
-                function()
-                    return Stats:print()
+                    return Stats:getPlaytime() .. Stats:print()
                 end,
                 'root'
             },
-            {
-                'Back',
-                'root'
-            }
         },
     },
     lineHeight = 36,
