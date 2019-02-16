@@ -17,6 +17,9 @@ function love.load()
 
     requireDir('src')
 
+    -- for now, the same song will loop through the whole game
+    AudioManager:stream('assets/music/theme.ogg')
+
     love.graphics.setFont(
         love.graphics.newFont(16)
     )
