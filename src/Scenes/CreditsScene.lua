@@ -11,6 +11,8 @@ Isaac Pepin
 Nick Johnson
 @beardvilletv
 
+Rie Jones
+
 RJ Klint
 
 Thomas Holden
