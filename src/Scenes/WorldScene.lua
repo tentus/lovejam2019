@@ -6,6 +6,9 @@ WorldScene = {
     transitionLength = 0.25,
     mapName = 'lake',
     previousMap = 'start',
+
+    bgimage = love.graphics.newImage('assets/tiles/bg.jpg'),
+
     -- camera = Camera,
     -- map = sti map,
     -- physics = physics world,
@@ -63,6 +66,12 @@ end
 
 
 function WorldScene:draw()
+    -- draw fixed-position background
+    local swidth, sheight = love.window.getMode()
+    local iwidth, iheight = self.bgimage:getDimensions()
+    local scale = math.max(swidth / iwidth, sheight / iheight)
+    love.graphics.draw(self.bgimage, 0, 0, 0, scale, scale)
+
     -- determine how much we need to translate around to see the player
     local tx, ty = self.camera:translate()
 
