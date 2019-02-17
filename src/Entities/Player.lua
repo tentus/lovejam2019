@@ -6,6 +6,10 @@ Player = Class{
     -- physics stuff
     bodyType = 'dynamic',
     radius = 31,
+    jumps = {
+        remaining = 0,
+        max = 1,
+    },
 
     walkForce = 500,
     jumpForce = 500,
@@ -42,9 +46,10 @@ function Player:update(dt)
 
     local xVel, yVel = self.body:getLinearVelocity()
 
-    -- todo: proper jumping resets and such
-    if Bindings:pressed('a') then
-        self.body:applyLinearImpulse(0, -self.jumpForce)
+    if (Bindings:pressed('a') or Bindings:pressed('up'))
+        and self.jumps.remaining > 0 then
+            self.jumps.remaining = self.jumps.remaining - 1
+            self.body:applyLinearImpulse(0, -self.jumpForce)
     end
 
     local x = Bindings:get('move')
@@ -52,7 +57,7 @@ function Player:update(dt)
             self.body:applyForce(self.walkForce * x * 5, 0)
     else
         -- todo: this is an inelegant way to apply braking
-        self.body:applyForce(-5 * xVel, 0)
+        self.body:applyForce(-10 * xVel, 0)
     end
 
     -- update animation based on movement
@@ -83,6 +88,15 @@ function Player:draw()
 
     if self:invincible() then
         love.graphics.setColor(1, 1, 1)
+    end
+end
+
+
+function Player:beginContact()
+    -- todo: this makes the assumption that any collision replenishes our jumps.
+    -- we need to add logic to compare the body of the "other" to our own, and see if it's beneath us
+    if self.jumps.remaining < self.jumps.max then
+        self.jumps.remaining = self.jumps.remaining + 1
     end
 end
 
