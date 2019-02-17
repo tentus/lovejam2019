@@ -161,8 +161,12 @@ end
 
 
 function WorldScene:startTransition(mapName)
+    -- check that we're not already transitioing
+    if self.transition > 0 then return end
+
     Fader:start(0, self.transitionLength)
     self.transition = self.transitionLength
+
     self.previousMap = self.mapName
     self.mapName = mapName
 end

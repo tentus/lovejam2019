@@ -24,8 +24,10 @@ function Spikes:draw()
 end
 
 
-function Spikes:makeShape()
-    return love.physics.newRectangleShape(self.width, self.height)
+function Spikes:makeShapes()
+    return {
+        love.physics.newRectangleShape(self.width, self.height)
+    }
 end
 
 
