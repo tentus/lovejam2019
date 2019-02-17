@@ -17,8 +17,10 @@ function Door:init(world, object)
 end
 
 
-function Door:makeShape()
-    return love.physics.newRectangleShape(self.width, self.height)
+function Door:makeShapes()
+    return {
+        love.physics.newRectangleShape(self.width, self.height)
+    }
 end
 
 

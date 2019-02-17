@@ -30,7 +30,7 @@ function Player:init()
     local gridsize = 128
     -- set offsets for image drawing, since it won't change
     self.offsets.x = gridsize * 0.5
-    self.offsets.y = gridsize * 0.75
+    self.offsets.y = gridsize * 0.5
 
     local grid = anim8.newGrid(gridsize, gridsize, self.image:getWidth(), self.image:getHeight())
     self.anims = {
@@ -104,7 +104,15 @@ end
 function Player:createBody(world, x, y)
     Physical.createBody(self, world, x, y)
 
-    -- todo: make head
+    self.body:setFixedRotation(true)
+end
+
+
+function Player:makeShapes()
+    return {
+        love.physics.newCircleShape(0, self.radius, self.radius),
+        love.physics.newCircleShape(0, -self.radius, self.radius),
+    }
 end
 
 
