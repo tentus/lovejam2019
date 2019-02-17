@@ -12,7 +12,7 @@ Player = Class{
     },
 
     walkForce = 500,
-    jumpForce = 750,
+    jumpForce = 775,
 
     -- drawing stuff
     image = love.graphics.newImage('assets/sprites/player.png'),
