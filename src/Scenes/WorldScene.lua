@@ -22,6 +22,9 @@ function WorldScene:init()
     self.player = Player()
     self.camera = Camera(self.player)
 
+    Inventory.items = {}
+    Inventory.coins = {}
+
     -- special case for init
     self:loadMap()
 end
