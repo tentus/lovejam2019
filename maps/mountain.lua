@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 33,
-  nextobjectid = 88,
+  nextobjectid = 90,
   properties = {},
   tilesets = {
     {
@@ -425,7 +425,34 @@ return {
       offsety = 0,
       draworder = "topdown",
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 88,
+          name = "HealthUpgrade",
+          type = "HealthUpgrade",
+          shape = "point",
+          x = 9186,
+          y = 5174,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 89,
+          name = "HealthUpgrade",
+          type = "HealthUpgrade",
+          shape = "point",
+          x = 5350,
+          y = 4782,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",
