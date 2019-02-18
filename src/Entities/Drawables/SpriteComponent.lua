@@ -12,6 +12,11 @@ function SpriteComponent:init(imagePath)
 end
 
 
-function SpriteComponent:draw(x, y)
-    love.graphics.draw(self.image, x - self.x, y - self.y)
+function SpriteComponent:draw(x, y, flip)
+    local sx, ox = 1, 0
+    if flip then
+        sx = -1
+        ox = self.image:getWidth()
+    end
+    love.graphics.draw(self.image, x - self.x, y - self.y, 0, sx, 1, ox, 0)
 end
