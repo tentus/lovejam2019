@@ -18,6 +18,7 @@ Player = Class{
     image = love.graphics.newImage('assets/sprites/player.png'),
     offsets = {},
     currentAnim = 'idle',
+    flipped = false,
     anims = {},
 
     -- override default health
@@ -71,7 +72,12 @@ function Player:update(dt)
         self.currentAnim = 'idle'
     end
 
-    self.anims[self.currentAnim].flippedH = (xVel < 0)
+    -- facing is separate from animation choosing, so it can be "carried" between animations, to avoid flickering
+    if math.abs(xVel) > threshold then
+        self.flipped = (xVel < 0)
+    end
+
+    self.anims[self.currentAnim].flippedH = self.flipped
 
     self.anims[self.currentAnim]:update(dt)
 end
