@@ -22,6 +22,9 @@ function WorldScene:init()
     self.player = Player()
     self.camera = Camera(self.player)
 
+    self.mapName = 'lake'
+    self.previousMap = 'start'
+
     Inventory.items = {}
     Inventory.coins = {}
 
