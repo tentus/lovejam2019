@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.2" orientation="orthogonal" renderorder="right-down" width="192" height="96" tilewidth="64" tileheight="64" infinite="0" nextlayerid="33" nextobjectid="101">
+<map version="1.2" tiledversion="1.2.2" orientation="orthogonal" renderorder="right-down" width="192" height="96" tilewidth="64" tileheight="64" infinite="0" nextlayerid="34" nextobjectid="119">
  <tileset firstgid="1" source="../assets/tiles/rocks.tsx"/>
  <tileset firstgid="17" source="../assets/tiles/snow.tsx"/>
  <tileset firstgid="33" source="../assets/tiles/ice-blocks.tsx"/>
@@ -216,6 +216,15 @@
   <object id="89" name="Spin" type="Unlock" x="5350" y="4782">
    <point/>
   </object>
+  <object id="107" name="Spikes" type="Spikes" x="2624" y="3968" width="64" height="64"/>
+  <object id="108" name="Spikes" type="Spikes" x="5568" y="2880" width="64" height="64"/>
+  <object id="109" name="Spikes" type="Spikes" x="6592" y="2240" width="64" height="64"/>
+  <object id="110" name="Spikes" type="Spikes" x="7168" y="3712" width="64" height="64"/>
+  <object id="111" name="Spikes" type="Spikes" x="7040" y="4672" width="128" height="64"/>
+  <object id="112" name="Spikes" type="Spikes" x="10368" y="2624" width="64" height="64"/>
+  <object id="118" name="Peak" type="Sign" x="9216" y="1984">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="22" name="Pickups">
   <object id="73" name="Coin" type="Coin" x="4864" y="3328">
@@ -278,7 +287,7 @@
   <object id="94" name="Coin" type="Coin" x="3840" y="4800">
    <point/>
   </object>
-  <object id="95" name="Coin" type="Coin" x="3456" y="4864">
+  <object id="95" name="Coin" type="Coin" x="3840" y="4544">
    <point/>
   </object>
   <object id="96" name="Coin" type="Coin" x="4032" y="4480">
@@ -294,6 +303,38 @@
    <point/>
   </object>
   <object id="100" name="Coin" type="Coin" x="10112" y="4096">
+   <point/>
+  </object>
+  <object id="113" name="Health" type="Health" x="3200" y="3648">
+   <point/>
+  </object>
+  <object id="114" name="Health" type="Health" x="5888" y="2624">
+   <point/>
+  </object>
+  <object id="115" name="Health" type="Health" x="9920" y="2240">
+   <point/>
+  </object>
+  <object id="116" name="Health" type="Health" x="11008" y="3904">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="33" name="Enemies">
+  <object id="101" name="Skull" type="Skull" x="7872" y="3776">
+   <point/>
+  </object>
+  <object id="102" name="Skull" type="Skull" x="8256" y="5120">
+   <point/>
+  </object>
+  <object id="103" name="Skull" type="Skull" x="7296" y="5312">
+   <point/>
+  </object>
+  <object id="104" name="Skull" type="Skull" x="10496" y="4032">
+   <point/>
+  </object>
+  <object id="105" name="Skull" type="Skull" x="3840" y="3328">
+   <point/>
+  </object>
+  <object id="106" name="Skull" type="Skull" x="3392" y="4864">
    <point/>
   </object>
  </objectgroup>
