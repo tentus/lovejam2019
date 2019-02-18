@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.2" orientation="orthogonal" renderorder="right-down" width="192" height="96" tilewidth="64" tileheight="64" infinite="0" nextlayerid="31" nextobjectid="73">
+<map version="1.2" tiledversion="1.2.2" orientation="orthogonal" renderorder="right-down" width="192" height="96" tilewidth="64" tileheight="64" infinite="0" nextlayerid="31" nextobjectid="106">
  <tileset firstgid="1" source="../assets/tiles/rocks.tsx"/>
  <tileset firstgid="17" source="../assets/tiles/snow.tsx"/>
  <tileset firstgid="33" source="../assets/tiles/ice-blocks.tsx"/>
@@ -209,8 +209,109 @@
 11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,8,0,0,0,0,0,0,10,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
 </data>
  </layer>
- <objectgroup id="21" name="Misc"/>
- <objectgroup id="22" name="Pickups"/>
+ <objectgroup id="21" name="Misc">
+  <object id="105" name="HealthUpgrade" type="HealthUpgrade" x="9666.67" y="4830.3">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="22" name="Pickups">
+  <object id="73" name="Coin" type="Coin" x="1657.58" y="5060.61">
+   <point/>
+  </object>
+  <object id="74" name="Coin" type="Coin" x="2884.85" y="4863.64">
+   <point/>
+  </object>
+  <object id="75" name="Coin" type="Coin" x="4063.64" y="4351.52">
+   <point/>
+  </object>
+  <object id="76" name="Coin" type="Coin" x="4669.7" y="3854.55">
+   <point/>
+  </object>
+  <object id="77" name="Coin" type="Coin" x="4766.67" y="3851.52">
+   <point/>
+  </object>
+  <object id="78" name="Coin" type="Coin" x="4845.45" y="3854.55">
+   <point/>
+  </object>
+  <object id="79" name="Coin" type="Coin" x="5948.48" y="3333.33">
+   <point/>
+  </object>
+  <object id="80" name="Coin" type="Coin" x="6493.94" y="3284.85">
+   <point/>
+  </object>
+  <object id="81" name="Coin" type="Coin" x="6978.79" y="3400">
+   <point/>
+  </object>
+  <object id="82" name="Coin" type="Coin" x="8472.73" y="5612.12">
+   <point/>
+  </object>
+  <object id="83" name="Coin" type="Coin" x="7809.09" y="5375.76">
+   <point/>
+  </object>
+  <object id="84" name="Coin" type="Coin" x="7639.39" y="5378.79">
+   <point/>
+  </object>
+  <object id="85" name="Coin" type="Coin" x="7424.24" y="5372.73">
+   <point/>
+  </object>
+  <object id="86" name="Coin" type="Coin" x="6172.73" y="4030.3">
+   <point/>
+  </object>
+  <object id="87" name="Coin" type="Coin" x="5848.48" y="4093.94">
+   <point/>
+  </object>
+  <object id="88" name="Coin" type="Coin" x="5848.48" y="4206.06">
+   <point/>
+  </object>
+  <object id="89" name="Coin" type="Coin" x="5845.45" y="4306.06">
+   <point/>
+  </object>
+  <object id="90" name="Coin" type="Coin" x="6069.7" y="5312.12">
+   <point/>
+  </object>
+  <object id="91" name="Coin" type="Coin" x="7515.15" y="3406.06">
+   <point/>
+  </object>
+  <object id="92" name="Coin" type="Coin" x="7303.03" y="3636.36">
+   <point/>
+  </object>
+  <object id="93" name="Coin" type="Coin" x="7306.06" y="3751.52">
+   <point/>
+  </object>
+  <object id="94" name="Coin" type="Coin" x="7303.03" y="3875.76">
+   <point/>
+  </object>
+  <object id="95" name="Coin" type="Coin" x="6793.94" y="4730.3">
+   <point/>
+  </object>
+  <object id="96" name="Coin" type="Coin" x="6433.33" y="4509.09">
+   <point/>
+  </object>
+  <object id="97" name="Coin" type="Coin" x="6427.27" y="4369.7">
+   <point/>
+  </object>
+  <object id="98" name="Coin" type="Coin" x="8193.94" y="3460.61">
+   <point/>
+  </object>
+  <object id="99" name="Coin" type="Coin" x="8506.06" y="3457.58">
+   <point/>
+  </object>
+  <object id="100" name="Coin" type="Coin" x="8775.76" y="3460.61">
+   <point/>
+  </object>
+  <object id="101" name="Coin" type="Coin" x="9396.97" y="3530.3">
+   <point/>
+  </object>
+  <object id="102" name="Coin" type="Coin" x="9842.42" y="3854.55">
+   <point/>
+  </object>
+  <object id="103" name="Coin" type="Coin" x="11103" y="3912.12">
+   <point/>
+  </object>
+  <object id="104" name="Coin" type="Coin" x="11578.8" y="3718.18">
+   <point/>
+  </object>
+ </objectgroup>
  <objectgroup id="23" name="Spawns">
   <object id="2" name="lake" type="Spawn" x="704" y="5184">
    <point/>
