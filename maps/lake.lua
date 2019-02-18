@@ -9,7 +9,7 @@ return {
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 32,
-  nextobjectid = 82,
+  nextobjectid = 83,
   properties = {},
   tilesets = {
     {
@@ -861,6 +861,19 @@ return {
           type = "Skull",
           shape = "point",
           x = 9984,
+          y = 4992,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 82,
+          name = "LakeSignToVillage",
+          type = "Sign",
+          shape = "point",
+          x = 1792,
           y = 4992,
           width = 0,
           height = 0,
