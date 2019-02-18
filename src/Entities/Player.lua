@@ -149,6 +149,6 @@ end
 
 
 function Player:kill()
-    -- todo: death scene or something
+    Gamestate.push(DeathScene)
     Stats:add('Deaths')
 end
