@@ -17,8 +17,9 @@ function love.load()
 
     requireDir('src')
 
-    -- for now, the same song will loop through the whole game
-    AudioManager:stream('assets/music/theme.ogg')
+    -- after the intro plays, loop the main song
+    AudioManager:stream('assets/music/intro.ogg')
+    AudioManager:streamNext('assets/music/theme.ogg')
 
     love.graphics.setFont(
         love.graphics.newFont(16)
@@ -31,6 +32,7 @@ end
 function love.update(dt)
     lovebird.update()
     Fader:update(dt)
+    AudioManager:update()
     Bindings:update()
 end
 

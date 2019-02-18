@@ -2,6 +2,8 @@ AudioManager = {
     -- for short one-off sounds we can cache the source in memory
     cache = {},
 
+    queue = {},
+
     -- a streaming Source for music
     streaming = nil,
 
@@ -12,6 +14,20 @@ AudioManager = {
         sfx    = 1,
     },
 }
+
+
+function AudioManager:update(dt)
+    if table.getn(self.queue) > 0 and not self.streaming:isPlaying() then
+        local queued = table.remove(self.queue,1)
+        self:stream(queued)
+    end
+end
+
+
+function AudioManager:streamNext(file)
+    table.insert(self.queue, file)
+    self.streaming:setLooping(false)
+end
 
 
 function AudioManager:play(file)
