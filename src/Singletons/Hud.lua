@@ -42,7 +42,7 @@ function Hud:draw()
         love.graphics.push()
         love.graphics.translate(self.edge, height - self.edge)
         love.graphics.draw(self.images.coin, 0, -spacing)
-        love.graphics.print('x ' .. Inventory:total(Coin.classname), spacing, 8 - spacing)
+        love.graphics.print('x ' .. Inventory:totalCoins(), spacing, 8 - spacing)
         love.graphics.pop()
     end
 end

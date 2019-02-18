@@ -3,6 +3,11 @@ Collectible = Class{
 }
 
 
-function Collectible:isCollected()
-    return Inventory:has(self.classname)
+function Collectible:isCollected(map)
+    return Inventory:hasItem(self.classname, map)
+end
+
+
+function Collectible:beginContact(other)
+    Inventory:collectItem(self.classname, WorldScene.mapName)
 end

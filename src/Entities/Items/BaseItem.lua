@@ -23,8 +23,3 @@ function BaseItem:draw()
     end
 end
 
-
-function BaseItem:beginContact(other)
-    Inventory:collect(self.classname)
-    self:kill()
-end

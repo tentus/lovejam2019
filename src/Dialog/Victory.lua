@@ -4,8 +4,8 @@ return {
         function()
             -- force a reset of various aspect
             WorldScene:init()
-            Inventory.collected  = {}
-            Inventory.spent  = {}
+            Inventory.items = {}
+            Inventory.coins = {}
 
             Gamestate.pop()
             Gamestate.switch(CreditsScene)
