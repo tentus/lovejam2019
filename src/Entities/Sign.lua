@@ -32,7 +32,7 @@ end
 
 function Sign:draw()
     local x, y = self:bodyPosition()
-    self.sprite:draw(x, y)
+    self.sprite:draw(x, y + self.radius)
 end
 
 
