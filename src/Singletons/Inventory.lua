@@ -1,34 +1,42 @@
 Inventory = {
-    -- which items have been collected
-    collected = {},
+    -- which items have been collected, and which map they've been collected from
+    items = {},
 
-    -- which items (read: coins) have been used
-    spent = {},
+    -- will hold how many coins we've collected and spent
+    coins = {}
 }
 
 
-function Inventory:record(act, thing, qty)
-    local bucket = self[act]
-    bucket[thing] = (bucket[thing] or 0) + (qty or 1)
-    Stats:add(thing .. ' ' .. act)
+function Inventory:collectItem(item, map)
+    local bucket = self.items[item] or {}
+    bucket[map] = true
+    self.items[item] = bucket
+
+    Stats:add(item .. ' collected')
 end
 
 
-function Inventory:collect(thing, qty)
-    self:record('collected', thing, qty)
+function Inventory:hasItem(item, map)
+    return self.items[item] and self.items[item][map]
 end
 
 
-function Inventory:spend(thing, qty)
-    self:record('spent', thing, qty)
+function Inventory:collectCoins(qty)
+    qty = (qty or 1)
+    self.coins.collected = (self.coins.collected or 0) + qty
+    Stats:add('Coins collected', qty)
 end
 
 
-function Inventory:has(thing)
-    return (self.collected[thing] or 0) > 0
+function Inventory:spendCoins(qty)
+    if self:totalCoins() >= qty then
+        self.coins.spent = (self.coins.spend or 0) + qty
+        return false
+    end
+    return false
 end
 
 
-function Inventory:total(thing)
-    return (self.collected[thing] or 0) - (self.spent[thing] or 0)
+function Inventory:totalCoins()
+    return (self.coins.collected or 0) - (self.coins.spent or 0)
 end

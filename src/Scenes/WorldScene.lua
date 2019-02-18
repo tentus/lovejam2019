@@ -153,7 +153,7 @@ end
 function WorldScene:spawnEntities()
     for _, object in pairs(self.map.objects) do
         local ent = _G[object.type]
-        if ent and not (ent.isCollected and ent:isCollected()) then
+        if ent and not (ent.isCollected and ent:isCollected(self.mapName)) then
             object.ent = ent(self.physics, object)
         end
     end

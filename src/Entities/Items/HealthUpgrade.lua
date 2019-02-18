@@ -9,6 +9,7 @@ HealthUpgrade = Class{
 function HealthUpgrade:beginContact(other)
     if other.classname == Player.classname then
         other:incrementHealth()
-        BaseItem.beginContact(self, other)
+        Collectible.beginContact(self, other)
+        self:kill()
     end
 end
